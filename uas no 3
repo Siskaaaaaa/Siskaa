@@ -1,0 +1,62 @@
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Belanja {
+    private String namaBarang;
+
+    public String getNamabarang() {
+        return namaBarang;
+    }
+
+    public void setNamabarang(String namaBarang) {
+        this.namaBarang = namaBarang;
+    }
+
+    public String getHargabarang() {
+        return hargabarang;
+    }
+
+    public void setHargabarang(String hargabarang) {
+        this.hargabarang = hargabarang;
+    }
+
+    public String getJumbarang() {
+        return jumbarang;
+    }
+
+    public void setJumbarang(String jumbarang) {
+        this.jumbarang = jumbarang;
+    }
+
+    private String hargabarang;
+    private String jumbarang;
+
+    public void CetakInvoice(ArrayList<Belanja> belanja) {
+        for (int index = 0; index < belanja.size(); index++) {
+            System.out.println(belanja.get(index).getNamabarang());
+            System.out.println(belanja.get(index).getHargabarang());
+            System.out.println(belanja.get(index).getJumbarang());
+            System.out.println();
+        }
+    }
+            public static void main(String[] args){
+                int jum = 4;
+                ArrayList<Belanja> p = new ArrayList<>();
+                for (int index = 0; index < jum; index++){
+                    Belanja s = new Belanja();
+                    Scanner sc = new Scanner(System.in);
+                    System.out.print("type item name =");
+                    s.setNamabarang(sc.nextLine());
+                    System.out.print("Type item price = ");
+                    s.setHargabarang(sc.nextLine());
+                    System.out.println("type item QTY = ");
+                    s.setJumbarang(sc.nextLine());
+                    p.add(s);
+                }
+                System.out.println("........................................");
+                System.out.println("TOTAL BELANJA:%60");
+                new Belanja().CetakInvoice(p));
+
+            }
+        }
